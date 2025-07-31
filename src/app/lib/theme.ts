@@ -29,7 +29,7 @@ const defaultTheme = createTheme({
     },
   },
   cssVariables: {
-    colorSchemeSelector: "class",
+    colorSchemeSelector: "data",
   },
   typography: {
     fontFamily: "var(--font-poppins)",

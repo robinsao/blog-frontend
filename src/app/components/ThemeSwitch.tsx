@@ -4,7 +4,7 @@ import { useColorScheme, Switch } from "@mui/material";
 import { ChangeEvent } from "react";
 
 export default function ThemeToggle() {
-  const { mode, setMode } = useColorScheme();
+  const { mode, setMode, systemMode } = useColorScheme();
 
   function handleToggle(
     _: ChangeEvent<HTMLInputElement>,
@@ -17,8 +17,8 @@ export default function ThemeToggle() {
   return (
     <Switch
       onChange={handleToggle}
-      checked={mode === "dark"}
       aria-hidden="true"
+      checked={(systemMode ?? mode) === "dark"}
       sx={{
         flexBasis: "auto",
         width: 72,
