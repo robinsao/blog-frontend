@@ -84,7 +84,7 @@ function BlogItem({ blog }: { blog: Blog }) {
           >
             <CardHeader
               title={blog.title}
-              subheader={dayjs(blog.publishedAt).format("D/M/YY")}
+              subheader={dayjs(blog.createdAt).format("D/M/YY")}
               slots={{
                 title: Typography,
               }}

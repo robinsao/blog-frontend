@@ -125,7 +125,7 @@ export default async function Page({
 }) {
   const blogSlug = decodeURIComponent((await params).blogSlug);
   const fetchParams = {
-    fields: "slug,title,content,publishedAt,publishStatus,excerpt",
+    fields: "slug,title,content,createdAt,publishStatus,excerpt",
     populate: "*",
   };
   const blog = (await fetchPublishedBlogs(fetchParams)).filter(
@@ -189,7 +189,7 @@ export default async function Page({
         </Grid>
         <Grid>
           <Typography variant="subtitle1">
-            {dayjs(blog.publishedAt).format("ddd, D/M/YYYY")}
+            {dayjs(blog.createdAt).format("ddd, D/M/YYYY")}
           </Typography>
         </Grid>
       </Grid>

@@ -7,10 +7,10 @@ export const revalidate = 300;
 
 export default async function Home() {
   const fetchParams = {
-    fields: "slug,title,content,publishedAt,publishStatus,excerpt",
+    fields: "slug,title,content,createdAt,publishStatus,excerpt",
     populate: "*",
     "filters[publishStatus][$eq]": "published",
-    sort: "publishedAt:desc,slug:desc",
+    sort: "createdAt:desc,slug:desc",
   };
 
   let blogs: Blog[] = [];

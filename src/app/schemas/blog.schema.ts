@@ -8,7 +8,7 @@ const BlogSchema = z.object({
   excerpt: z.string().optional(),
   slug: z.string().optional(),
   publishStatus: z.enum(["draft", "published", "scheduled"]).optional(),
-  publishedAt: z.string().nullish(),
+  createdAt: z.string().nullish(),
   cover: StrapiImageFormatsSchema.nullish(),
   seoTitle: z.string().max(60).optional(),
   seoDescription: z.string().optional(),
