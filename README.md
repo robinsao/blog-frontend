@@ -11,10 +11,11 @@ Please first setup the [backend](https://github.com/robinsao/blog-backend). To s
 ```sh
 git clone https://github.com/robinsao/blog-frontend
 cd blog-frontend
+npm i --omit=dev
 npm run dev
 ```
 
-Then, configure the environment variables, and next.config.ts.
+Then, configure the environment variables.
 
 # Blog Caching
 
