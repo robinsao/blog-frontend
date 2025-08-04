@@ -126,7 +126,8 @@ export default async function Page({
   const blogSlug = decodeURIComponent((await params).blogSlug);
   const fetchParams = {
     fields: "slug,title,content,createdAt,publishStatus,excerpt",
-    populate: "*",
+    "populate[cover][fields]":
+      "id,url,width,height,size,alternativeText,caption,formats",
   };
   const blog = (await fetchPublishedBlogs(fetchParams)).filter(
     (b) => b.slug === blogSlug,
@@ -163,6 +164,20 @@ export default async function Page({
           loading="eager"
         />
       </Container>
+
+      {/* Cover image caption */}
+      {blog.cover && (
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <MarkdownRendererAsync>
+            {`(${blog.cover!.caption})`}
+          </MarkdownRendererAsync>
+        </Grid>
+      )}
 
       <Grid
         sx={{
@@ -235,6 +250,7 @@ export default async function Page({
             md: 9,
           }}
         >
+          {/* Blog content */}
           <MarkdownRendererAsync>{blog.content}</MarkdownRendererAsync>
         </Grid>
       </Grid>

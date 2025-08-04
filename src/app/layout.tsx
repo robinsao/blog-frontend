@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <body>
-        <InitColorSchemeScript attribute="data" defaultMode="system"/>
+        <InitColorSchemeScript attribute="data" defaultMode="system" />
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme} defaultMode="system">
             <CssBaseline />
