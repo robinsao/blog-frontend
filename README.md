@@ -12,10 +12,14 @@ Please first setup the [backend](https://github.com/robinsao/blog-backend). To s
 git clone https://github.com/robinsao/blog-frontend
 cd blog-frontend
 npm i --omit=dev
-npm run dev
 ```
 
-Then, configure the environment variables.
+After this, configure the environment variables, and run it in either the development version with `npm run dev` or the production version with
+
+```sh
+npm run build
+npm run start
+```
 
 # Blog Caching
 
